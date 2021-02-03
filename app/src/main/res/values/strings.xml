@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Game Life</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="or">OU</string>
+    <string name="register">Registro</string>
+    <string name="confirmarSenha">Confirmar Senha</string>
+    <string name="nome">Nome</string>
+
+    <string name="entrar">Entrar</string>
+    <string name="registrar">Registrar</string>
+
 </resources>

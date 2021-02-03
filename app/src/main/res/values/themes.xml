@@ -13,9 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/background</item>
-        <item name="android:navigationBarColor">@color/background_60</item>
-        <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowActivityTransitions">true</item>
-
     </style>
+
+    <style name="BackButtonDefault">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">30sp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="srcCompat">@drawable/ic_keyboard_arrow_left_24px</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
 </resources>

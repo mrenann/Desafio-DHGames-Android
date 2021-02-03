@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.AddEditGamesActivity">
+
+
+    <ImageButton
+        android:id="@+id/ibRegisterBack"
+        style="@style/BackButtonDefault"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="520sp"
+        android:layout_margin="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="20sp"
+        android:elevation="5sp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/constCard">
+
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
+                android:layout_marginTop="30sp"
+
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/tilTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilTitulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="Titulo"
+                app:layout_constraintEnd_toEndOf="@id/tilLancado"
+                app:layout_constraintStart_toStartOf="@id/tilLancado"
+                app:layout_constraintTop_toBottomOf="@+id/tvRegistro"
+                app:layout_constraintBottom_toTopOf="@id/tilLancado">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilLancado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:hint="Lançado Em"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilTitulo"
+                app:layout_constraintBottom_toTopOf="@+id/tilDesc">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietLancado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:inputType="number"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="Descrição"
+                app:layout_constraintEnd_toEndOf="@id/tilLancado"
+                app:layout_constraintStart_toStartOf="@id/tilLancado"
+                app:layout_constraintTop_toBottomOf="@+id/tilLancado">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tietDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:lines="7"
+                    android:inputType="textMultiLine"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btCardRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar Jogo"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="12dp"
+                android:background="@drawable/custom_button"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="150sp"
+        android:layout_height="170sp"
+        app:layout_constraintTop_toTopOf="@+id/card"
+        app:layout_constraintBottom_toTopOf="@+id/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/poster"
+        android:elevation="40sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_add_24"
+        app:riv_corner_radius="12dp"
+        android:transitionName="shared_element_container"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
