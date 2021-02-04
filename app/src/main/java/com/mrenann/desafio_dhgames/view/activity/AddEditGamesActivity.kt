@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -25,13 +27,14 @@ class AddEditGamesActivity : AppCompatActivity() {
     val firebaseAuth by lazy { Firebase.auth }
     val db by lazy { Firebase.firestore }
     private val storageRef by lazy { Firebase.storage.reference }
-
+    private val firebaseAnalytics by lazy { Firebase.analytics }
     var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddEditGamesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         gameId = intent.getStringExtra(Constants.ConstantsGAME.HAS_GAME_TO_EDIT_INTENT)
 
@@ -152,6 +155,7 @@ class AddEditGamesActivity : AppCompatActivity() {
             .add(gameData)
             .addOnSuccessListener {
                 uploadPicture(it.id)
+                firebaseAnalytics.logEvent("save_game", null)
                 Toast.makeText(this, "Dados Salvos com Sucesso!", Toast.LENGTH_SHORT).show()
                 finish()
             }
@@ -174,6 +178,7 @@ class AddEditGamesActivity : AppCompatActivity() {
 
             .addOnSuccessListener {
                 uploadPicture(gameId)
+                firebaseAnalytics.logEvent("edit_game", null)
                 Toast.makeText(this, "Dados Alterados com Sucesso!", Toast.LENGTH_SHORT).show()
                 finish()
             }

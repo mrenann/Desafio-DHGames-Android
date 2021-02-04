@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -25,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
     private val auth by lazy{
         Firebase.auth
     }
-
+    private val firebaseAnalytics by lazy { Firebase.analytics }
     private val db by lazy {
         Firebase.firestore
     }
@@ -86,6 +87,7 @@ class RegisterActivity : AppCompatActivity() {
             .document(user.uid ?: "")
             .set(userData)
             .addOnSuccessListener {
+                firebaseAnalytics.logEvent("sign_up", null)
                 Toast.makeText(this, "Usuário Cadastrado com Sucesso!", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

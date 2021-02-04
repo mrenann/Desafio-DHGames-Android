@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mrenann.desafio_dhgames.R
@@ -23,6 +24,7 @@ class LoginActivity : AppCompatActivity() {
     private val auth by lazy{
         Firebase.auth
     }
+    private val firebaseAnalytics by lazy { Firebase.analytics }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
                 auth.signInWithEmailAndPassword(userEmail, userPass)
                     .addOnSuccessListener {
+                        firebaseAnalytics.logEvent("login", null)
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
