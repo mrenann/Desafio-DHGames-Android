@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity::class.java)
                 intent.putExtra(Constants.ConstantsGAME.TO_GAME_INTENT, game.id)
                 startActivity(intent)
-                throw RuntimeException("Test Crash");
             }
         }
     }

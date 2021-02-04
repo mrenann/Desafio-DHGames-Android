@@ -10,5 +10,10 @@
 
     <string name="entrar">Entrar</string>
     <string name="registrar">Registrar</string>
+    <string name="validationEmail">Coloque um E-mail Válido</string>
+    <string name="validationPassword">A senha tem que ter mais de 5 caracteres</string>
+    <string name="errorMessage">Campo não pode ser vazio</string>
+    <string name="string_email">email</string>
+    <string name="string_password">senha</string>
 
 </resources>
