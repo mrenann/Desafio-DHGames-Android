@@ -4,18 +4,15 @@ import android.app.Application
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.mrenann.desafio_dhgames.R
 import com.mrenann.desafio_dhgames.adapter.GamesAdapter
 import com.mrenann.desafio_dhgames.databinding.ActivityMainBinding
 import com.mrenann.desafio_dhgames.utils.Constants
@@ -36,6 +33,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, GameActivity::class.java)
                 intent.putExtra(Constants.ConstantsGAME.TO_GAME_INTENT, game.id)
                 startActivity(intent)
+                throw RuntimeException("Test Crash");
             }
         }
     }
