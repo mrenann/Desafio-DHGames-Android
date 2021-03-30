@@ -12,7 +12,7 @@ width="200" hspace="10" vspace="10">
 
 <img src="https://i.imgur.com/lhLecKw.jpg" align="left"
 width="200" hspace="10" vspace="10">
-
+<hr>
 <img src="https://i.imgur.com/ClUyZBN.jpg" align="left"
 width="200" hspace="10" vspace="10">
 
