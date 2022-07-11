@@ -1,6 +1,7 @@
 # Desafio-DHGames-Android
 
-Desafio proposto durante o curso Santander Coders MOBILE - Android ministrado pela Digital House
+Desafio proposto durante o curso Santander Coders MOBILE - Android ministrado pela Digital House  |
+
 
 ## Screenshots
 
