@@ -2,7 +2,6 @@
 
 Desafio proposto durante o curso Santander Coders MOBILE - Android ministrado pela Digital House  |
 
-
 ## Screenshots
 
 <img src="https://i.imgur.com/oIEviDm.jpg" align="left"
